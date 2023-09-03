@@ -2,6 +2,7 @@
   "name": "e-com",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://HannaMois.github.io/Shoe-Haven/",
   "dependencies": {
     "@chec/commerce.js": "^2.8.0",
     "@emotion/react": "^11.10.6",
