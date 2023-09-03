@@ -70,62 +70,41 @@ const App = () => {
     fetchCart();
   }, []);
 
-
   return (
     <>
-        <Navbar totalItems={cart.total_items} />
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <Products products={products} handleAddToCart={handleAddToCart} />
-            }
-          />
-          <Route
-            path="/cart"
-            element={
-              <Cart
-                cart={cart}
-                onUpdateCartQty={handleUpdateCartQty}
-                onRemoveFromCart={handleRemoveFromCart}
-                onEmptyCart={handleEmptyCart}
-              />
-            }
-          />
-          <Route
-            path="/checkout"
-            element={
-              <Checkout
-                cart={cart}
-                order={order}
-                onCaptureCheckout={handleCaptureCheckout}
-                error={errorMessage}
-              />
-            }
-          />
-          <Route path="*" element={<PageNotFound404 />}/>
-        </Routes>
+      <Navbar totalItems={cart.total_items} />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Products products={products} handleAddToCart={handleAddToCart} />
+          }
+        />
+        <Route
+          path="/cart"
+          element={
+            <Cart
+              cart={cart}
+              onUpdateCartQty={handleUpdateCartQty}
+              onRemoveFromCart={handleRemoveFromCart}
+              onEmptyCart={handleEmptyCart}
+            />
+          }
+        />
+        <Route
+          path="/checkout"
+          element={
+            <Checkout
+              cart={cart}
+              order={order}
+              onCaptureCheckout={handleCaptureCheckout}
+              error={errorMessage}
+            />
+          }
+        />
+        <Route path="*" element={<PageNotFound404 />} />
+      </Routes>
     </>
-    // <>
-    //   <Navbar totalItems={cart.total_items} />
-    //   <Products products={products} handleAddToCart={handleAddToCart} />
-    //   <Cart
-    //     cart={cart}
-    //     onUpdateCartQty={handleUpdateCartQty}
-    //     onRemoveFromCart={handleRemoveFromCart}
-    //     onEmptyCart={handleEmptyCart}
-    //   />
-    // </>
-    // {/* <Suspense fallback={<Loader />}> */}
-
-    // </Suspense>
-
-    // <Router>
-    //   <div style={{ display: "flex" }}>
-    //     <Navbar
-    //       totalItems={cart.total_items}
-    //       //   handleDrawerToggle={handleDrawerToggle}
-    //     />
   );
 };
 
